@@ -89,19 +89,41 @@ struct Vector2{
 };
 
 
+
+
 int main(){
 
     srand(time(NULL));
 
     Vector2 v(10.0f, 20.0f, 30.0f, 40.0f);
 
-    float *lerp = v.getLerp();
-
-    std::cout << lerp << std::endl;
-
-    for(int i = 0; i++ <= 20; i)
-        std::cout << (static_cast <float> (rand() / static_cast <float> (RAND_MAX))) << "; ";
     
+    std::cout << v.getAngle(false)      << std::endl; // 0.00040835 || -6.5848e-05 <- greičiausia likusi atmintis, nes aš niekad: a = 0;  ??
+    std::cout << v.getDist()            << std::endl; // 28.2843
+    std::cout << v.getDist(4, 8, 3, 2)  << std::endl; // 6.08276
+    std::cout << v.random(0, 7)         << std::endl; // 0.01
+    std::cout << v.setMag(8, 6)         << std::endl; // 5.25
+    std::cout << (static_cast <float> (rand() / static_cast <float> (RAND_MAX))) << std::endl; // 0.286569
+    
+    /*
+    PS C:\Users\\Desktop\c_C\Vector_class> g++ .\vector.cpp -o .\a.exe
+    PS C:\Users\\Desktop\c_C\Vector_class> .\a.exe
+    0.00040835
+    28.2843
+    6.08276
+    0.01
+    5.25
+    0.286569
+    PS C:\Users\\Desktop\c_C\Vector_class> 
+
+    ¯\_(ツ)_/¯
+
+    PS C:\Users\\Desktop\c_C\Vector_class> .\a.exe 
+    -6.5848e-05
+    28.2843
+    6.08276
+    */ 
     
     // std::cin.get();
 }
+
